@@ -1,0 +1,36 @@
+<odoo>
+  <data>
+
+    <record model="ir.actions.act_window" id="hf_base_act" >
+      <field name="name">Home Finance</field>
+      <field name="res_model">hf.cashbox</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="view_hf_base_form" model="ir.ui.view">
+      <field name="name">Home Finance Form</field>
+      <field name="model">hf.cashbox</field>
+      <field name="arch" type="xml">
+        <form string="CAJA">
+          <sheet>
+              <field name="name"/>
+          </sheet>
+        </form>
+
+      </field>
+    </record> 
+
+
+    <record id="view_hf_base_tree" model="ir.ui.view">
+      <field name="name">Home Finance List</field>
+      <field name="model">hf.cashbox</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+  </data>
+</odoo>

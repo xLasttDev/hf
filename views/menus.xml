@@ -1,0 +1,21 @@
+<odoo>
+  <data>
+
+    <!-- ACTIONS -->
+    <record model="ir.actions.act_window" id="hf_base_act" >
+      <field name="name">Finanzas del Hogar</field>
+      <field name="res_model">hf.cashbox</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- MENUS -->
+    <menuitem id="menu_base" 
+              parent="" 
+              sequence="10"
+              name="Home Finances"
+              action="hf_base_act"
+              web_icon="hf,static/img/icon.png"/>
+    />
+
+  </data>
+</odoo>

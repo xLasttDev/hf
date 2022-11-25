@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="module_category_home_finances" model="ir.module.category">
+            <field name="name">Home Finances</field>
+            <field name="description">Te ayuda a llevar las finanzas de tu hogar.</field>
+            <field name="sequence">7</field>
+        </record>
+        
+
+        <record id="group_hf_user" model="res.groups">
+            <field name="name">Usuario</field>
+            <field name="category_id" ref="hf.module_category_home_finances"/> 
+        </record>
+
+        <record id="group_hf_admin" model="res.groups">
+            <field name="name">Administrador</field>
+            <field name="category_id" ref="hf.module_category_home_finances"/> 
+            <field name="implied_ids" eval="[(4, ref('group_hf_user'))]"/>
+        </record>
+
+        <record id="group_hf_su_admin" model="res.groups">
+            <field name="name">Home Finances: Permisos Avanzados</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+            <field name="implied_ids" eval="[(4, ref('group_hf_admin'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>   
+        </record>
+
+    </data>
+</odoo>
